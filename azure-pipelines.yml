@@ -16,4 +16,4 @@ steps:
 - task: DotNetCoreCLI@2
   inputs:
     command: 'test'
-    projects: '**/*Tests/*.csproj'
+    projects: 'NUnit-BrowserStack/NUnit-BrowserStack.csproj'
