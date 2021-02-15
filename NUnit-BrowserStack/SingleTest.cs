@@ -17,6 +17,15 @@ namespace BrowserStack
       query.Submit();
       System.Threading.Thread.Sleep(5000);
       Assert.AreEqual("BrowserStack - Google Search", driver.Title);
+      if (driver.Title.Equals("BrowserStack - Google Search"))
+      {
+          ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"passed\", \"reason\": \"Expected\"}}");
+
+      }
+      else
+      {
+          ((IJavaScriptExecutor)driver).ExecuteScript("browserstack_executor: {\"action\": \"setSessionStatus\", \"arguments\": {\"status\":\"failed\", \"reason\": \"Unexpected\"}}");
+      }
     }
   }
 }
