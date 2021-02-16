@@ -30,6 +30,7 @@ namespace BrowserStack
       NameValueCollection settings = ConfigurationManager.GetSection("environments/" + environment) as NameValueCollection;
 
       DesiredCapabilities capability = new DesiredCapabilities();
+      capability.SetCapability("browserstack.localIdentifier", Environment.GetEnvironmentVariable("BROWSERSTACK_LOCAL_IDENTIFIER"));
 
       foreach (string key in caps.AllKeys)
       {
