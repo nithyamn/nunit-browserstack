@@ -1,4 +1,5 @@
-﻿using NUnit.Framework;
+using System;
+using NUnit.Framework;
 using OpenQA.Selenium;
 
 namespace BrowserStack
@@ -11,11 +12,12 @@ namespace BrowserStack
     [Test]
     public void SearchGoogle()
     {
+      driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(10));
       driver.Navigate().GoToUrl("https://www.google.com/ncr");
       IWebElement query = driver.FindElement(By.Name("q"));
       query.SendKeys("BrowserStack");
-      query.SendKeys(Keys.Enter);
-      //query.Submit();
+      //query.SendKeys(Keys.Enter);
+      query.Submit();
       System.Threading.Thread.Sleep(5000);
       Assert.AreEqual("BrowserStack - Google Search", driver.Title);
       if (driver.Title.Equals("BrowserStack - Google Search"))
