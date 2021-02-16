@@ -6,7 +6,8 @@ namespace BrowserStack
   [TestFixture("parallel", "chrome")]
   [TestFixture("parallel", "firefox")]
   [TestFixture("parallel", "safari")]
-  [TestFixture("parallel", "ie")]
+  [TestFixture("parallel", "samsung")]
+  [TestFixture("parallel", "iphone")]
   [Parallelizable(ParallelScope.Fixtures)]
   public class ParallelTest : SingleTest
   {
