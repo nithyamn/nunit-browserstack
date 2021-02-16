@@ -4,7 +4,7 @@ using OpenQA.Selenium;
 namespace BrowserStack
 {
   [TestFixture("parallel", "chrome")]
-  [TestFixture("parallel", "firefox")]
+  [TestFixture("parallel", "edge")]
   [TestFixture("parallel", "safari")]
   [TestFixture("parallel", "samsung")]
   [TestFixture("parallel", "iphone")]
